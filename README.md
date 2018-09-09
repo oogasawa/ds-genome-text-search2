@@ -71,7 +71,6 @@ Luceneの普通の使い方はStandardAnalyzerなどで字句解析して転置�
 検索語は正規表現で指定する。単に行全体に対して正規表現を探すので該当の文字列を入れるだけで文字列の途中のマッチを探すことができる。
 正規表現の文法はPerlの正規表現と正確にはちょっとだけ違うので、[Apache LuceneのJavadoc](https://static.javadoc.io/org.apache.lucene/lucene-core/7.4.0/org/apache/lucene/util/automaton/RegExp.html)を参照のこと。
 
-![Screen002.png](docs/images/Screen002.png)
 
 
 
