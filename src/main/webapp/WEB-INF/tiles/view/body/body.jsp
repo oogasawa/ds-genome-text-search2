@@ -31,7 +31,7 @@ Total hits: <c:out value="${totalHits}" /><br/>
   <tr>
   <td>
   <a href="${resultInfo.jbrowseLinkUrl}">
-  <img src="/static/images/506708890-612x612.jpg" width="30" height="30" />
+  <img src="/volvox/static/images/506708890-612x612.jpg" width="30" height="30" />
   </a>
   </td>
   <td>${resultInfo.seqid}</td>
