@@ -30,7 +30,7 @@ Total hits: <c:out value="${totalHits}" /><br/>
   <c:forEach var="resultInfo" items="${resultInfoList}">
   <tr>
   <td>
-  <a href="${resultInfo.jbrowseUrl}">
+  <a href="${resultInfo.jbrowseLinkUrl}">
   <img src="/static/images/506708890-612x612.jpg" width="30" height="30" />
   </a>
   </td>

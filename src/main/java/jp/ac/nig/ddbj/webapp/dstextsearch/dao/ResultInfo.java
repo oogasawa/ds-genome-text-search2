@@ -9,6 +9,9 @@ import java.util.regex.Pattern;
 public class ResultInfo {
 
 
+    String jbrowseLinkUrl = null;
+    String jbrowseBaseUrl = null;
+
     String line = null;
 
     String seqid = null;
@@ -18,18 +21,20 @@ public class ResultInfo {
     long   start = 0L;
     long   end   = 0L;
 
-    String jbrowseUrl = "";
-
     String score;
     String strand;
     String phase;
     String attributes;
 
 
-    public ResultInfo() { }
+    public ResultInfo(String jbrowseBaseUrl) {
+        this.jbrowseBaseUrl = jbrowseBaseUrl;
+    }
 
-    public ResultInfo(String line) {
+    public ResultInfo(String line, String jbrowseBaseUrl) {
+
         parse(line);
+        this.jbrowseBaseUrl = jbrowseBaseUrl;
     }
 
     public boolean isNull() {
@@ -77,7 +82,7 @@ public class ResultInfo {
         StringBuilder value   = null;
 
         try {
-            builder.append("http://rgm01.nig.ac.jp:60020/jbrowse/JBrowse-1.14.2-dev/index.html?data=sample_data/json/volvox");
+            builder.append(jbrowseBaseUrl);
 
             builder.append("&loc=");
             value = new StringBuilder();
@@ -123,7 +128,7 @@ public class ResultInfo {
             //System.out.println(value.toString());
             builder.append(URLEncoder.encode(value.toString(), "UTF-8"));
 
-            this.jbrowseUrl = builder.toString();//URLEncoder.encode(builder.toString(), "UTF-8");
+            this.jbrowseLinkUrl = builder.toString();//URLEncoder.encode(builder.toString(), "UTF-8");
 
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -222,12 +227,12 @@ public class ResultInfo {
     }
 
 
-    public String getJbrowseUrl() {
-        return jbrowseUrl;
+    public String getJbrowseLinkUrl() {
+        return jbrowseLinkUrl;
     }
 
-    public void setJbrowseUrl(String url) {
-        this.jbrowseUrl = url;
+    public void setJbrowseLinkUrl(String url) {
+        this.jbrowseLinkUrl = url;
     }
 
 

@@ -41,12 +41,8 @@ public class MainController {
     String index;
 
 
-    final int rowsPerPage = 100;
-
-    IndexReader reader = null;
-    IndexSearcher searcher = null;
-    Analyzer analyzer = null;
-
+    @Value("${baseUrl}")
+    String baseUrl;
 
 
     @RequestMapping(value = "/search", method = GET)
@@ -54,21 +50,28 @@ public class MainController {
                              //@RequestParam(value="case", defaultValue="insensitive") String regexMode,
                              @RequestParam(value = "page", defaultValue = "1") int page) {
 
+        final int rowsPerPage = 50;
 
-        int    rowsPerPage = 50;
+        IndexReader reader = null;
+        IndexSearcher searcher = null;
+        Analyzer analyzer = null;
+
+
+
+        //int    rowsPerPage = 50;
         String totalHits = "0";
         int    totalPages = 0;
 
         ArrayList<ResultInfo> list = new ArrayList<>();
         ArrayList<Integer> pageList = new ArrayList<>();
 
-        IndexReader reader = null;
+        //IndexReader reader = null;
         try {
 
             reader = DirectoryReader.open(FSDirectory.open(Paths.get(index)));
 
-            IndexSearcher searcher = new IndexSearcher(reader);
-            Analyzer analyzer = new StandardAnalyzer();
+            searcher = new IndexSearcher(reader);
+            analyzer = new StandardAnalyzer();
 
             //QueryParser parser = new QueryParser("line", analyzer);
             //Query queryObj = parser.parse(query);
@@ -87,7 +90,7 @@ public class MainController {
             //System.out.println("hits.length; " + String.valueOf(hits.length));
             for (int i=(page-1)*rowsPerPage; i<(int)Math.min(page*rowsPerPage, tops.totalHits); i++) {
                 Document doc = searcher.doc(hits[i].doc);
-                ResultInfo info = new ResultInfo(doc.get("line"));
+                ResultInfo info = new ResultInfo(doc.get("line"), baseUrl);
                 list.add(info);
             }
 
