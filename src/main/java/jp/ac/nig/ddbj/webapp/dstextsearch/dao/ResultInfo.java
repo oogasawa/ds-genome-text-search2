@@ -28,13 +28,16 @@ public class ResultInfo {
 
 
     public ResultInfo(String jbrowseBaseUrl) {
+
         this.jbrowseBaseUrl = jbrowseBaseUrl;
+
     }
 
     public ResultInfo(String line, String jbrowseBaseUrl) {
 
-        parse(line);
         this.jbrowseBaseUrl = jbrowseBaseUrl;
+        parse(line);
+
     }
 
     public boolean isNull() {

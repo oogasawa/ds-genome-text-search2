@@ -45,10 +45,8 @@ public class MainController {
     String jbrowseBaseUrl;
 
 
-    @Value("${speciesName}")
-    String speciesName;
 
-    @RequestMapping(value = "/volvox/search", method = GET)
+    @RequestMapping(value = "/{species}/search", method = GET)
     public ModelAndView home(@RequestParam(value = "query", defaultValue = "") String query,
                              //@RequestParam(value="case", defaultValue="insensitive") String regexMode,
                              @RequestParam(value = "page", defaultValue = "1") int page) {
