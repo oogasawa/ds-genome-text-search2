@@ -16,6 +16,7 @@ import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.automaton.RegExp;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -47,9 +48,11 @@ public class MainController {
 
 
     @RequestMapping(value = "/{species}/search", method = GET)
-    public ModelAndView home(@RequestParam(value = "query", defaultValue = "") String query,
-                             //@RequestParam(value="case", defaultValue="insensitive") String regexMode,
-                             @RequestParam(value = "page", defaultValue = "1") int page) {
+    public ModelAndView home(
+            @PathVariable(value="species") String species,
+            @RequestParam(value = "query", defaultValue = "") String query,
+            //@RequestParam(value="case", defaultValue="insensitive") String regexMode,
+            @RequestParam(value = "page", defaultValue = "1") int page) {
 
         final int rowsPerPage = 50;
 
@@ -130,6 +133,7 @@ public class MainController {
 
 
         TreeMap<String, Object> model = new TreeMap<>();
+        model.put("species", species);
         model.put("query", query);
         model.put("page", page);
         model.put("totalHits", totalHits);
