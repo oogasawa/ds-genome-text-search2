@@ -51,7 +51,7 @@ Luceneの普通の使い方はStandardAnalyzerなどで字句解析して転置�
 
 以下のコマンドでds-text-searchが動作するwebサーバーが8000番ポートで起動する。（デフォルトは8080)
 
-    java -jar target/ds-text-search2-2.0.0.jar \
+    java -jar target/ds-text-search2-2.0.1.jar \
 	    --server.port=8000 \
 	    --jbrowseBaseUrl=http://ds-genome.ddbj.nig.ac.jp/volvox/index.html?data=sample_data/json/volvox \
 		--index=/tmp/genome.index
