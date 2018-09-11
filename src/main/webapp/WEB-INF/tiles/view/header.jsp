@@ -4,7 +4,7 @@
 
 <div class="jumbotron text-center" id="header">
   <h1>DS Genome text search</h1>
-  <form action="/${species}/search" method="GET">
+  <form action="/${species}/textsearch" method="GET">
   <input type="text" id="query" name="query" size="40" value="${query}" autofocus />
   <input type="submit" value="submit" />
   <input type="button" value="clear" onclick="document.getElementById('query').value=''" />

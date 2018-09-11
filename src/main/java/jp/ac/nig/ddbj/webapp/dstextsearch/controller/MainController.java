@@ -47,7 +47,7 @@ public class MainController {
 
 
 
-    @RequestMapping(value = "/{species}/search", method = GET)
+    @RequestMapping(value = "/{species}/textsearch", method = GET)
     public ModelAndView home(
             @PathVariable(value="species") String species,
             @RequestParam(value = "query", defaultValue = "") String query,

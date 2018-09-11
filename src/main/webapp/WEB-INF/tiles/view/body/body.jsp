@@ -14,7 +14,7 @@ Total hits: <c:out value="${totalHits}" /><br/>
 <ul class="pagination">
   <c:forEach var="p" items="${pageList}">
   <li class="page-item ${(p == page)?'active':''}">
-  <a class="page-link" href="/${species}/search?query=${query}&page=${p}"><c:out value="${p}" /></a></li>
+  <a class="page-link" href="/${species}/textsearch?query=${query}&page=${p}"><c:out value="${p}" /></a></li>
   </c:forEach>
 </ul>
 </div>
