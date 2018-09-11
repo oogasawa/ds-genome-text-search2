@@ -41,8 +41,8 @@ public class MainController {
     String index;
 
 
-    @Value("${baseUrl}")
-    String baseUrl;
+    @Value("${jbrowseBaseUrl}")
+    String jbrowseBaseUrl;
 
 
     @RequestMapping(value = "/search", method = GET)
@@ -90,7 +90,7 @@ public class MainController {
             //System.out.println("hits.length; " + String.valueOf(hits.length));
             for (int i=(page-1)*rowsPerPage; i<(int)Math.min(page*rowsPerPage, tops.totalHits); i++) {
                 Document doc = searcher.doc(hits[i].doc);
-                ResultInfo info = new ResultInfo(doc.get("line"), baseUrl);
+                ResultInfo info = new ResultInfo(doc.get("line"), jbrowseBaseUrl);
                 list.add(info);
             }
 
