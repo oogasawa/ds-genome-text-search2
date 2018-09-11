@@ -53,7 +53,7 @@ Luceneの普通の使い方はStandardAnalyzerなどで字句解析して転置�
 
     java -jar target/ds-text-search2-2.0.0.jar \
 	    --server.port=8000 \
-	    --jbrowseBaseUrl: http://ds-genome.ddbj.nig.ac.jp/volvox/index.html?data=sample_data/json/volvox
+	    --jbrowseBaseUrl=http://ds-genome.ddbj.nig.ac.jp/volvox/index.html?data=sample_data/json/volvox ¥
 		--index=/tmp/genome.index
 
 
