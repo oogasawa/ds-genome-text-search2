@@ -20,6 +20,8 @@ Luceneの普通の使い方はStandardAnalyzerなどで字句解析して転置�
 
 ## 更新履歴
 
+- version 2.0.1
+    - リバースプロキシ環境で動作させるためのURLの調整
 - version 2.0.0
     - 基本的な機能を実装
         - Luceneによる全文検索
@@ -37,7 +39,7 @@ Luceneの普通の使い方はStandardAnalyzerなどで字句解析して転置�
 
 	git clone http://gitlab.ddbj.nig.ac.jp/oogasawa/ds-text-search2
 	cd ds-text-search2
-	git checkout v2.0.0
+	git checkout v2.0.1
 	mvn -Dmaven.test.skip=true clean package
 	
 これによりtargetディレクトリの下にjarファイルが生成される。
