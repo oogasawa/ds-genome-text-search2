@@ -47,7 +47,7 @@ Luceneの普通の使い方はStandardAnalyzerなどで字句解析して転置�
 ## 起動方法
 
 起動の前にLuceneのインデックスを作る必要がある。
-作成方法は[ds-text-search2-indexerのREADME.md]()を参照のこと。
+作成方法は[ds-text-search2-indexerのREADME.md](https://gitlab.ddbj.nig.ac.jp/oogasawa/ds-text-search2-indexer)を参照のこと。
 11MB程度のファイルなら1分もかからない程度でインデックスができる。
 
 
