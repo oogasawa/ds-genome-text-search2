@@ -31,9 +31,9 @@ Luceneの普通の使い方はStandardAnalyzerなどで字句解析して転置�
 
 ### 前提
 
-- Java version 10
-- Apache maven version 3
-- git 
+- Java version 10以上
+- Apache maven version 3以上
+- git version 2以上
 
 ### コンパイル方法
 
