@@ -20,9 +20,11 @@ Luceneの普通の使い方はStandardAnalyzerなどで字句解析して転置�
 
 ## 更新履歴
 
+
 - version 2.0.2
-    - いくつかのバグフィックス
     - Spring MVCでは`@RequestMapping()`で受けていないURLパターンにアクセスすると/errorに飛ばされる仕様になっているので、飛び先の/errorのページを追加した。
+- version 2.0.1
+    - リバースプロキシ環境で動作させるためのURLの調整
 - version 2.0.0
     - 基本的な機能を実装
         - Luceneによる全文検索
@@ -32,15 +34,15 @@ Luceneの普通の使い方はStandardAnalyzerなどで字句解析して転置�
 
 ### 前提
 
-- Java version 10
-- Apache maven version 3
-- git 
+- Java version 10以上
+- Apache maven version 3以上
+- git version 2以上
 
 ### コンパイル方法
 
 	git clone http://gitlab.ddbj.nig.ac.jp/oogasawa/ds-text-search2
 	cd ds-text-search2
-	git checkout v2.0.0
+	git checkout v2.0.2
 	mvn -Dmaven.test.skip=true clean package
 	
 これによりtargetディレクトリの下にjarファイルが生成される。
@@ -48,7 +50,7 @@ Luceneの普通の使い方はStandardAnalyzerなどで字句解析して転置�
 ## 起動方法
 
 起動の前にLuceneのインデックスを作る必要がある。
-作成方法は[ds-text-search2-indexerのREADME.md]()を参照のこと。
+作成方法は[ds-text-search2-indexerのREADME.md](https://gitlab.ddbj.nig.ac.jp/oogasawa/ds-text-search2-indexer)を参照のこと。
 11MB程度のファイルなら1分もかからない程度でインデックスができる。
 
 
