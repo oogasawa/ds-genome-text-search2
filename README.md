@@ -20,6 +20,9 @@ Luceneの普通の使い方はStandardAnalyzerなどで字句解析して転置�
 
 ## 更新履歴
 
+- version 2.0.2
+    - いくつかのバグフィックス
+    - Spring MVCでは`@RequestMapping()`で受けていないURLパターンにアクセスすると/errorに飛ばされる仕様になっているので、飛び先の/errorのページを追加した。
 - version 2.0.0
     - 基本的な機能を実装
         - Luceneによる全文検索

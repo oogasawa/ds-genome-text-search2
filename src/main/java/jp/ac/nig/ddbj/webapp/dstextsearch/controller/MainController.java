@@ -166,7 +166,15 @@ public class MainController {
     }
 
 
+    @RequestMapping(value = "/error")
+    public ModelAndView showErrorPage() {
+        return new ModelAndView("error_page");
+    }
 
+    @RequestMapping(value = "/bad_query")
+    public ModelAndView showBadQueryPage() {
+        return new ModelAndView("bad_query");
+    }
 
 
 }
